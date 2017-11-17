@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum RefreshType{
+    RefreshTypeDownDefault,//MJRefreshHeader
+    RefreshTypeDownAnimation,
+    RefreshTypeDownHideTime,
+    RefreshTypeDownHideState,
+    RefreshTypeDownCustomText,
+    RefreshTypeDownCustomRefreshUI
+}RefreshType;
+
 @interface DownDefaultController : UIViewController
+//类型
+@property(nonatomic,assign)RefreshType type;
 
 @end
