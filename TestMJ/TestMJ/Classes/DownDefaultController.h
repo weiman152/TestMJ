@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 typedef enum RefreshType{
-    RefreshTypeDownDefault,//MJRefreshHeader
-    RefreshTypeDownAnimation,
-    RefreshTypeDownHideTime,
-    RefreshTypeDownHideState,
+    RefreshTypeDownNone,      //MJRefreshHeader
+    RefreshTypeDownDefault,   //MJRefreshNormalHeader
+    RefreshTypeDownAnimation, //MJRefreshGifHeader
+    RefreshTypeDownHideImage, //MJRefreshStateHeader
+    RefreshTypeDownHideTime,  //MJRefreshNormalHeader
+    RefreshTypeDownHideState, //MJRefreshNormalHeader
     RefreshTypeDownCustomText,
     RefreshTypeDownCustomRefreshUI
 }RefreshType;

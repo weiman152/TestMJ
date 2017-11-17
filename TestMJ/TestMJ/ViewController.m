@@ -36,8 +36,25 @@
 
 -(void)initDataList{
     NSArray * arr = @[
-                       @[@"(MJRefreshHeader)",@"(MJRefreshNormalHeader)",@"MJRefreshGifHeader",@"MJRefreshStateHeader",@"自定义文字",@"自定义刷新控件"],
-                       @[@"默认",@"动画图片",@"隐藏刷新状态的文字",@"全部加载完毕",@"禁止自动加载",@"自定义文字",@"加载后隐藏",@"自动回弹的上拉01",@"自动回弹的上拉02",@"自定义刷新控件（自动刷新）",@"自定义刷新控件(自动回弹)"],
+                      @[@"RefreshTypeDownNone(MJRefreshHeader)",
+                        @"RefreshTypeDownDefault(MJRefreshNormalHeader)",
+                        @"RefreshTypeDownAnimation(MJRefreshGifHeader)",
+                        @"RefreshTypeDownHideImage(MJRefreshStateHeader)",
+                        @"RefreshTypeDownHideTime(MJRefreshNormalHeader)",
+                        @"RefreshTypeDownHideState",
+                        @"RefreshTypeDownCustomText",
+                        @"RefreshTypeDownCustomRefreshUI"],
+                      @[@"默认",
+                        @"动画图片",
+                        @"隐藏刷新状态的文字",
+                        @"全部加载完毕",
+                        @"禁止自动加载",
+                        @"自定义文字",
+                        @"加载后隐藏",
+                        @"自动回弹的上拉01",
+                        @"自动回弹的上拉02",
+                        @"自定义刷新控件（自动刷新）",
+                        @"自定义刷新控件(自动回弹)"],
                        @[@"上下拉刷新"],
                        @[@"下拉刷新"]
                       ];
@@ -59,6 +76,7 @@
     NSArray * tempArray = self.dataList[indexPath.section];
     NSString * str = tempArray[indexPath.row];
     cell.textLabel.text  = str;
+    cell.textLabel.font = [UIFont systemFontOfSize:12];
     return cell;
 }
 
@@ -74,29 +92,28 @@
              DownDefaultController * downVC = [[DownDefaultController alloc] init];
             switch (indexPath.row) {
                 case 0:
-                {
-                    downVC.type = RefreshTypeDownDefault;
-                }
+                    downVC.type = RefreshTypeDownNone;
                     break;
                 case 1:
-                {
-                    downVC.type = RefreshTypeDownAnimation;
-                }
+                    downVC.type = RefreshTypeDownDefault;
                     break;
                 case 2:
-                {
-                    downVC.type = RefreshTypeDownHideTime;
-                }
+                    downVC.type = RefreshTypeDownAnimation;
                     break;
                 case 3:
-                {
-                     downVC.type = RefreshTypeDownHideState;
-                }
+                     downVC.type = RefreshTypeDownHideImage;
                     break;
                 case 4:
-                {
-                    
-                }
+                     downVC.type = RefreshTypeDownHideTime;
+                    break;
+                case 5:
+                    downVC.type = RefreshTypeDownHideState;
+                    break;
+                case 6:
+                    downVC.type = RefreshTypeDownCustomText;
+                    break;
+                case 7:
+                    downVC.type = RefreshTypeDownCustomRefreshUI;
                     break;
                 default:
                     break;

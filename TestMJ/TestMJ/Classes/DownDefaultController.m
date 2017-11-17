@@ -8,6 +8,7 @@
 
 #import "DownDefaultController.h"
 #import "MJRefresh.h"
+#import "CustomHeader.h"
 
 @interface DownDefaultController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView * tableView;
@@ -40,23 +41,29 @@
 
 -(void)addHeader{
     switch (self.type) {
+        case RefreshTypeDownNone:
+             [self MJRefreshHeader_Default];
+            break;
         case RefreshTypeDownDefault:
-            [self MJRefreshHeader_Default];
+             [self MJRefreshNormalHeader_Normal];
             break;
         case RefreshTypeDownAnimation:
-            [self MJRefreshNormalHeader_Normal];
+             [self MJRefreshGifHeader_gif];
             break;
-        case RefreshTypeDownHideTime:
-            [self MJRefreshGifHeader_gif];
-            break;
-        case RefreshTypeDownHideState:
+        case RefreshTypeDownHideImage:
              [self MJRefreshStateHeader_state];
             break;
+        case RefreshTypeDownHideTime:
+             [self MJRefreshHeader_HideTime];
+            break;
+        case RefreshTypeDownHideState:
+             [self MJRefreshHeader_HideState];
+            break;
         case RefreshTypeDownCustomText:
-            
+             [self MJRefreshHeader_CustomText];
             break;
         case RefreshTypeDownCustomRefreshUI:
-            
+             [self MJRefreshHeader_CustomRefresh];
             break;
         default:
             break;
@@ -99,7 +106,7 @@ MJRefreshStateHeader: 隐藏上下箭头图片，只有状态和时间
 }
 
 /*
-
+MJRefreshGifHeader: 左边带动图的刷新，有时间，有状态
  */
 -(void)MJRefreshGifHeader_gif{
     __weak DownDefaultController * weakSelf = self;
@@ -136,6 +143,67 @@ MJRefreshStateHeader: 隐藏上下箭头图片，只有状态和时间
     self.tableView.mj_header = header;
 }
 
+//把时间隐藏掉
+-(void)MJRefreshHeader_HideTime{
+    __weak DownDefaultController * weakSelf = self;
+    MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf loadData];
+        [weakSelf.tableView reloadData];
+        [weakSelf endRefresh];
+    }];
+    //隐藏时间
+    header.lastUpdatedTimeLabel.hidden = YES;
+    self.tableView.mj_header = header;
+}
+
+//把状态隐藏掉
+-(void)MJRefreshHeader_HideState{
+    __weak DownDefaultController * weakSelf = self;
+    MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf loadData];
+        [weakSelf.tableView reloadData];
+        [weakSelf endRefresh];
+    }];
+    //隐藏状态
+    header.stateLabel.hidden = YES;
+    self.tableView.mj_header = header;
+}
+
+//把状态隐藏掉
+-(void)MJRefreshHeader_CustomText{
+    __weak DownDefaultController * weakSelf = self;
+    MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf loadData];
+        [weakSelf.tableView reloadData];
+        [weakSelf endRefresh];
+    }];
+    //设置刷新状态的文字
+    [header setTitle:@"正常状态" forState:MJRefreshStateIdle];
+    [header setTitle:@"刷新状态" forState:MJRefreshStateRefreshing];
+    [header setTitle:@"正在下拉状态" forState:MJRefreshStatePulling];
+    
+    //设置字体
+    header.stateLabel.font = [UIFont systemFontOfSize:10];
+    header.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:7];
+    
+    //设置文字颜色
+    header.stateLabel.textColor = [UIColor redColor];
+    header.lastUpdatedTimeLabel.textColor = [UIColor blueColor];
+    
+    self.tableView.mj_header = header;
+}
+
+//自定义刷新控件
+-(void)MJRefreshHeader_CustomRefresh{
+    __weak DownDefaultController * weakSelf = self;
+    CustomHeader * header = [CustomHeader headerWithRefreshingBlock:^{
+        [weakSelf loadData];
+        [weakSelf.tableView reloadData];
+        [weakSelf endRefresh];
+    }];
+    
+    self.tableView.mj_header = header;
+}
 
 -(void)loadData{
     NSArray * tempArray = @[@"(*^__^*) 嘻嘻……",@"呜呜",@"🐟🐟"];
