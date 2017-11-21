@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		970456641FBEE96B00860CCF /* CustomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 970456631FBEE96B00860CCF /* CustomHeader.m */; };
+		970456671FBF084100860CCF /* UpRefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970456661FBF084100860CCF /* UpRefreshController.m */; };
 		97550A041FBDA9AD0098BBA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97550A031FBDA9AD0098BBA1 /* main.m */; };
 		97550A071FBDA9AD0098BBA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97550A061FBDA9AD0098BBA1 /* AppDelegate.m */; };
 		97550A0A1FBDA9AD0098BBA1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97550A091FBDA9AD0098BBA1 /* ViewController.m */; };
@@ -59,6 +60,8 @@
 /* Begin PBXFileReference section */
 		970456621FBEE96B00860CCF /* CustomHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHeader.h; sourceTree = "<group>"; };
 		970456631FBEE96B00860CCF /* CustomHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeader.m; sourceTree = "<group>"; };
+		970456651FBF084100860CCF /* UpRefreshController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpRefreshController.h; sourceTree = "<group>"; };
+		970456661FBF084100860CCF /* UpRefreshController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpRefreshController.m; sourceTree = "<group>"; };
 		975509FF1FBDA9AD0098BBA1 /* TestMJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestMJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97550A031FBDA9AD0098BBA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		97550A051FBDA9AD0098BBA1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 				97CADF231FBE8FD500CA478E /* DownDefaultController.m */,
 				970456621FBEE96B00860CCF /* CustomHeader.h */,
 				970456631FBEE96B00860CCF /* CustomHeader.m */,
+				970456651FBF084100860CCF /* UpRefreshController.h */,
+				970456661FBF084100860CCF /* UpRefreshController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				97550A6C1FBDA9DF0098BBA1 /* MJRefreshBackStateFooter.m in Sources */,
 				97550A6E1FBDA9DF0098BBA1 /* MJRefreshAutoStateFooter.m in Sources */,
 				97550A751FBDA9DF0098BBA1 /* MJRefreshHeader.m in Sources */,
+				970456671FBF084100860CCF /* UpRefreshController.m in Sources */,
 				97550A041FBDA9AD0098BBA1 /* main.m in Sources */,
 				97550A661FBDA9DF0098BBA1 /* MJRefreshConst.m in Sources */,
 				97550A761FBDA9DF0098BBA1 /* MJRefreshBackFooter.m in Sources */,

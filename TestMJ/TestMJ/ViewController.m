@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "DownDefaultController.h"
+#import "UpRefreshController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -44,13 +45,13 @@
                         @"RefreshTypeDownHideState",
                         @"RefreshTypeDownCustomText",
                         @"RefreshTypeDownCustomRefreshUI"],
-                      @[@"默认",
-                        @"动画图片",
-                        @"隐藏刷新状态的文字",
-                        @"全部加载完毕",
-                        @"禁止自动加载",
-                        @"自定义文字",
-                        @"加载后隐藏",
+                      @[@"没有刷新效果(MJRefreshFooter)",
+                        @"有效果但是没有UI(MJRefreshBackFooter)",
+                        @"只有刷新文字(MJRefreshBackGifFooter)",
+                        @"只有刷新文字(MJRefreshBackStateFooter)",
+                        @"有文字，有图片，有刷新效果(MJRefreshBackNormalFooter)",
+                        @"没有UI，但是有效果(MJRefreshAutoFooter)",
+                        @"有蚊子，有效果，位置紧跟cell（MJRefreshAutoGifFooter）",
                         @"自动回弹的上拉01",
                         @"自动回弹的上拉02",
                         @"自定义刷新控件（自动刷新）",
@@ -123,16 +124,39 @@
             break;
         case 1:
         {
+            UpRefreshController * upVC = [[UpRefreshController alloc] init];
             switch (indexPath.row) {
                 case 0:
-                {
-                
-                }
+                    upVC.type = UpRefreshTypeNone;
                     break;
-                    
+                case 1:
+                    upVC.type = UpRefreshTypeBack;
+                    break;
+                case 2:
+                    upVC.type = UpRefreshTypeBackGif;
+                    break;
+                case 3:
+                    upVC.type = UpRefreshTypeBackState;
+                    break;
+                case 4:
+                    upVC.type = UpRefreshTypeBackNormal;
+                    break;
+                case 5:
+                    upVC.type = UpRefreshTypeAuto;
+                    break;
+                case 6:
+                    upVC.type = UpRefreshTypeAutoGif;
+                    break;
+                case 7:
+                    upVC.type = UpRefreshTypeAutoState;
+                    break;
+                case 8:
+                    upVC.type = UpRefreshTypeAutoNormal;
+                    break;
                 default:
                     break;
             }
+            [self.navigationController pushViewController:upVC animated:YES];
         }
             break;
         case 2:
