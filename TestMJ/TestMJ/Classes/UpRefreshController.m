@@ -8,6 +8,7 @@
 
 #import "UpRefreshController.h"
 #import "MJRefresh.h"
+#import "CustomFooter.h"
 
 @interface UpRefreshController ()<UITableViewDelegate,UITableViewDataSource>
 //用于刷新的tableView
@@ -54,10 +55,16 @@
             [self refreshAutoGif];
             break;
         case UpRefreshTypeAutoState:
-            
+            [self refreshAutoState];
             break;
         case UpRefreshTypeAutoNormal:
-            
+            [self refreshAutoNormal];
+            break;
+        case UpRefreshTypeAnimationCustom:
+            [self refreshAnimationCustom];
+            break;
+        case UpRefreshTypeAnimationGif:
+            [self refreshAnimationGif];
             break;
         default:
             break;
@@ -133,6 +140,56 @@
         [weakSelf endRefresh];
     }];
 }
+
+//有文字，有效果，和MJRefreshAutoGifFooter一个效果
+-(void)refreshAutoState{
+    __weak UpRefreshController * weakSelf = self;
+    self.tableView.mj_footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
+        [weakSelf loadDataMore];
+        [weakSelf.tableView reloadData];
+        [weakSelf endRefresh];
+    }];
+}
+
+//有文字，刷新有图片，有刷新效果。
+-(void)refreshAutoNormal{
+    __weak UpRefreshController * weakSelf = self;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [weakSelf loadDataMore];
+        [weakSelf.tableView reloadData];
+        [weakSelf endRefresh];
+    }];
+}
+
+-(void)refreshAnimationCustom{
+    __weak UpRefreshController * weakSelf = self;
+    CustomFooter * footer = [CustomFooter footerWithRefreshingBlock:^{
+        [weakSelf loadDataMore];
+        [weakSelf.tableView reloadData];
+        [weakSelf endRefresh];
+    }];
+    self.tableView.mj_footer = footer;
+}
+
+-(void)refreshAnimationGif{
+    __weak UpRefreshController * weakSelf = self;
+    MJRefreshAutoGifFooter * footer = [MJRefreshAutoGifFooter footerWithRefreshingBlock:^{
+        [weakSelf loadDataMore];
+        [weakSelf.tableView reloadData];
+        [weakSelf endRefresh];
+    }];
+    
+    //设置正在刷新状态的动画图片
+    NSMutableArray * refreshingImages = [NSMutableArray array];
+    for (NSUInteger i = 1; i<=3; i++) {
+        UIImage * image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_loading_0%zd",i]];
+        [refreshingImages addObject:image];
+    }
+    [footer setImages:refreshingImages forState:MJRefreshStateRefreshing];
+    
+    self.tableView.mj_footer = footer;
+}
+
 
 -(void)loadDataMore{
     [self.dataList addObjectsFromArray:@[@"小桥流水哗啦啦",@"轻轻巧巧过家家",@"和和美美过日子",@"呼呼啦啦行千家"]];

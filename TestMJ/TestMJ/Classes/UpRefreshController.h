@@ -17,7 +17,9 @@ typedef enum UpRefreshType{
     UpRefreshTypeAuto,
     UpRefreshTypeAutoGif,
     UpRefreshTypeAutoState,
-    UpRefreshTypeAutoNormal
+    UpRefreshTypeAutoNormal,
+    UpRefreshTypeAnimationCustom,
+    UpRefreshTypeAnimationGif
 
 }UpRefreshType;
 

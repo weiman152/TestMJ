@@ -22,6 +22,7 @@
     [super viewDidLoad];
     [self initTableView];
     [self initDataList];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,11 +52,11 @@
                         @"只有刷新文字(MJRefreshBackStateFooter)",
                         @"有文字，有图片，有刷新效果(MJRefreshBackNormalFooter)",
                         @"没有UI，但是有效果(MJRefreshAutoFooter)",
-                        @"有蚊子，有效果，位置紧跟cell（MJRefreshAutoGifFooter）",
-                        @"自动回弹的上拉01",
-                        @"自动回弹的上拉02",
-                        @"自定义刷新控件（自动刷新）",
-                        @"自定义刷新控件(自动回弹)"],
+                        @"有文字，有效果，位置紧跟cell（MJRefreshAutoGifFooter）",
+                        @"有文字，有效果，位置与AutoGif一样(MJRefreshAutoStateFooter)",
+                        @"有文字，有效果，位置与AutoGif一样(MJRefreshAutoNormalFooter)",
+                        @"动画刷新(CustomFooter)",
+                        @"动画刷新(MJRefreshAutoGifFooter)"],
                        @[@"上下拉刷新"],
                        @[@"下拉刷新"]
                       ];
@@ -152,6 +153,12 @@
                     break;
                 case 8:
                     upVC.type = UpRefreshTypeAutoNormal;
+                    break;
+                case 9:
+                    upVC.type = UpRefreshTypeAnimationCustom;
+                    break;
+                case 10:
+                    upVC.type = UpRefreshTypeAnimationGif;
                     break;
                 default:
                     break;
