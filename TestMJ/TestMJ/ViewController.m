@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "DownDefaultController.h"
 #import "UpRefreshController.h"
+#import "CollectionController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -168,7 +169,8 @@
             break;
         case 2:
         {
-        
+            CollectionController * collectionVC = [[CollectionController alloc] init];
+            [self.navigationController pushViewController:collectionVC animated:YES];
         }
             break;
         case 3:

@@ -39,6 +39,7 @@
 		97550A771FBDA9DF0098BBA1 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 97550A601FBDA9DF0098BBA1 /* MJRefreshAutoFooter.m */; };
 		97550A781FBDA9DF0098BBA1 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 97550A621FBDA9DF0098BBA1 /* MJRefreshComponent.m */; };
 		97CADF251FBE8FD500CA478E /* DownDefaultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CADF231FBE8FD500CA478E /* DownDefaultController.m */; };
+		97D7329A1FCD44EC006EE6E4 /* CollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D732991FCD44EC006EE6E4 /* CollectionController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,8 @@
 		97550A641FBDA9DF0098BBA1 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
 		97CADF221FBE8FD500CA478E /* DownDefaultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownDefaultController.h; sourceTree = "<group>"; };
 		97CADF231FBE8FD500CA478E /* DownDefaultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownDefaultController.m; sourceTree = "<group>"; };
+		97D732981FCD44EC006EE6E4 /* CollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionController.h; sourceTree = "<group>"; };
+		97D732991FCD44EC006EE6E4 /* CollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +228,8 @@
 				970456661FBF084100860CCF /* UpRefreshController.m */,
 				972C38441FC594BB000544B8 /* CustomFooter.h */,
 				972C38451FC594BB000544B8 /* CustomFooter.m */,
+				97D732981FCD44EC006EE6E4 /* CollectionController.h */,
+				97D732991FCD44EC006EE6E4 /* CollectionController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				97550A781FBDA9DF0098BBA1 /* MJRefreshComponent.m in Sources */,
 				97550A741FBDA9DF0098BBA1 /* MJRefreshFooter.m in Sources */,
 				97550A6D1FBDA9DF0098BBA1 /* MJRefreshBackNormalFooter.m in Sources */,
+				97D7329A1FCD44EC006EE6E4 /* CollectionController.m in Sources */,
 				97550A6F1FBDA9DF0098BBA1 /* MJRefreshAutoGifFooter.m in Sources */,
 				97550A701FBDA9DF0098BBA1 /* MJRefreshAutoNormalFooter.m in Sources */,
 				97550A711FBDA9DF0098BBA1 /* MJRefreshNormalHeader.m in Sources */,
