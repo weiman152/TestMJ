@@ -40,6 +40,7 @@
 		97550A781FBDA9DF0098BBA1 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 97550A621FBDA9DF0098BBA1 /* MJRefreshComponent.m */; };
 		97CADF251FBE8FD500CA478E /* DownDefaultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CADF231FBE8FD500CA478E /* DownDefaultController.m */; };
 		97D7329A1FCD44EC006EE6E4 /* CollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D732991FCD44EC006EE6E4 /* CollectionController.m */; };
+		97D7329D1FCD5411006EE6E4 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D7329C1FCD5411006EE6E4 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,8 @@
 		97CADF231FBE8FD500CA478E /* DownDefaultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownDefaultController.m; sourceTree = "<group>"; };
 		97D732981FCD44EC006EE6E4 /* CollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionController.h; sourceTree = "<group>"; };
 		97D732991FCD44EC006EE6E4 /* CollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionController.m; sourceTree = "<group>"; };
+		97D7329B1FCD5411006EE6E4 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		97D7329C1FCD5411006EE6E4 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +233,8 @@
 				972C38451FC594BB000544B8 /* CustomFooter.m */,
 				97D732981FCD44EC006EE6E4 /* CollectionController.h */,
 				97D732991FCD44EC006EE6E4 /* CollectionController.m */,
+				97D7329B1FCD5411006EE6E4 /* WebViewController.h */,
+				97D7329C1FCD5411006EE6E4 /* WebViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -481,6 +486,7 @@
 				97550A701FBDA9DF0098BBA1 /* MJRefreshAutoNormalFooter.m in Sources */,
 				97550A711FBDA9DF0098BBA1 /* MJRefreshNormalHeader.m in Sources */,
 				970456641FBEE96B00860CCF /* CustomHeader.m in Sources */,
+				97D7329D1FCD5411006EE6E4 /* WebViewController.m in Sources */,
 				97550A0A1FBDA9AD0098BBA1 /* ViewController.m in Sources */,
 				97550A6B1FBDA9DF0098BBA1 /* MJRefreshBackGifFooter.m in Sources */,
 				97550A071FBDA9AD0098BBA1 /* AppDelegate.m in Sources */,

@@ -10,6 +10,7 @@
 #import "DownDefaultController.h"
 #import "UpRefreshController.h"
 #import "CollectionController.h"
+#import "WebViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -175,7 +176,8 @@
             break;
         case 3:
         {
-        
+            WebViewController * webView = [[WebViewController alloc] init];
+            [self.navigationController pushViewController:webView animated:YES];
         }
             break;
         default:
