@@ -11,6 +11,7 @@
 #import "UpRefreshController.h"
 #import "CollectionController.h"
 #import "WebViewController.h"
+#import "ScrollViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -60,7 +61,8 @@
                         @"动画刷新(CustomFooter)",
                         @"动画刷新(MJRefreshAutoGifFooter)"],
                        @[@"上下拉刷新"],
-                       @[@"下拉刷新"]
+                       @[@"下拉刷新"],
+                       @[@"scrollview Test"]
                       ];
     [self.dataList addObjectsFromArray:arr];
 }
@@ -180,6 +182,12 @@
             [self.navigationController pushViewController:webView animated:YES];
         }
             break;
+        case 4:
+        {
+            ScrollViewController * scrollVC = [[ScrollViewController alloc] init];
+            [self.navigationController pushViewController:scrollVC animated:YES];
+        }
+            break;
         default:
             break;
     }
@@ -195,7 +203,7 @@
 
 -(NSArray *)titleArray{
     if (!_titleArray) {
-        _titleArray = @[@"下拉刷新",@"上拉刷新",@"collectionView",@"webView"];
+        _titleArray = @[@"下拉刷新",@"上拉刷新",@"collectionView",@"webView",@"scrollview"];
     }
     return _titleArray;
 }
